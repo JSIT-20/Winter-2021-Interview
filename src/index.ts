@@ -15,7 +15,7 @@ app.get('/pokemon', async (request, response) => {
   const p = new Pokemon();
   // Sends in the requested name
   try {
-    const result = await p.getPokemonByName(String(request.query.name));
+    const result = await p.getPokemonsByNameList(String(request.query.name));
     // Sends back the id of the pokemon
     response.send({
       data: result

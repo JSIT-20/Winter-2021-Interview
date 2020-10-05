@@ -25,9 +25,16 @@ export class Pokemon {
    * Gets the list of Pokemon info objects
    * @param names list of names
    */
-  public async getPokemonsByNameList(names: string[]): Promise<IPokemon[]> {
+  public async getPokemonsByNameList(names: string) {
     // TO BE IMPLEMENTED
-    return null;
+    var pokemons = names.split(',');
+    let newPokemons: string[];
+    pokemons.forEach(function(x){
+      newPokemons.push(x.replace('"'),(''));
+    });
+    console.log(newPokemons);
+    return this.getPokemonByName(names);
+    
   }
 
   /**
